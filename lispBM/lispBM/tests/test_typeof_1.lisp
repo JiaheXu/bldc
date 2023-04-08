@@ -1,1 +1,1 @@
-(check (eq (type-of 1u) type-u))
+(eq (type-of 1u) type-u)

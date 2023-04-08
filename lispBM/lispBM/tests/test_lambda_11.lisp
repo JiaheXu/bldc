@@ -3,4 +3,4 @@
 
 (define f (lambda (n) ((f2) n) ))
 
-(check (= (f 2) 1))
+(= (f 2) 1)

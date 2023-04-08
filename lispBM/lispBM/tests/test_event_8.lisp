@@ -11,11 +11,11 @@
     
 (spawn event-sender 100)
 
-(defun correct (n)
+(defun check (n)
   (if (= n 0) t
     (progn
       (recv ((? x) (if (eq x '(3.14 3.14 3.14))
-                      (correct (- n 1))
+                      (check (- n 1))
                     x))))))
 
-(check (correct 70))
+(check 70)

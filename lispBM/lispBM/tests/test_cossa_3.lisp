@@ -2,5 +2,5 @@
 
 (setassoc 'alist 3 'e)
 
-(check (and (eq (cossa alist 'c) 3)
-            (eq (cossa alist 'a) 1)))
+(and (eq (cossa alist 'c) 3)
+     (eq (cossa alist 'a) 1))

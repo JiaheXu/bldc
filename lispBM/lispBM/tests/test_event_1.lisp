@@ -9,4 +9,4 @@
 
 
 
-(check (recv ((? x) (eq x 'apa))))
+(recv ((? x) (eq x 'apa)))

@@ -1,1 +1,1 @@
-(check (eq (or 't 'nil) 't))
+(eq (or 't 'nil) 't)

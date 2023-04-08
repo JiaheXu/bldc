@@ -1,1 +1,1 @@
-(check (eq 'read_error 'read_error))
+(eq 'read_error 'read_error)

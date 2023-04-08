@@ -20,7 +20,7 @@
 
 (gc)
 
-(check (= (recv
-           ( (bepa (? x)) 'bepa)
-           ( (apa  (? x)) x))
-          129))
+(= (recv
+    ( (bepa (? x)) 'bepa)
+    ( (apa  (? x)) x))
+   129)

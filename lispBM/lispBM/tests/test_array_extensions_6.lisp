@@ -1,4 +1,4 @@
 
-(define arr (bufcreate 16))
+(define arr (array-create type-byte 16))
 
-(check (= 16 (buflen arr)))
+(= 16 (buflen arr))

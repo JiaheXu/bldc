@@ -4,4 +4,4 @@
 
 (define r (dot x y))
 
-(check (= r 32.0))
+(= r 32.0)

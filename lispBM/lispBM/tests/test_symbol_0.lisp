@@ -1,2 +1,2 @@
 
-(check (eq 'apa 'apa))
+(eq 'apa 'apa)

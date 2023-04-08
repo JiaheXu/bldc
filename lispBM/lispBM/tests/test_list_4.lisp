@@ -1,2 +1,2 @@
 
-(check (= (length 'nil) 0))
+(= (length 'nil) 0)

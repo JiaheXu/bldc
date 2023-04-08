@@ -5,5 +5,5 @@
          ( (? x) (> x 5) 'larger) 
          ( _ 'whatever)))
 
-(check (and (eq (f 23) 'larger)
-            (eq (f 0.3) 'smaller)))
+(and (eq (f 23) 'larger)
+     (eq (f 0.3) 'smaller))

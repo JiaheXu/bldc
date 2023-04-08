@@ -1,4 +1,4 @@
 
 (define prg '())
 
-(check (eq (eval-program prg) 'nil))
+(eq (eval-program prg) 'nil)

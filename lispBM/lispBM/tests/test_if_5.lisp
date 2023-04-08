@@ -8,5 +8,5 @@
 		       (define b 10)
 		       (+ a b))))))
 
-(check (and (eq (test 't) 25)
-            (eq (test 'nil) 'nil)))
+(and (eq (test 't) 25)
+     (eq (test 'nil) 'nil))

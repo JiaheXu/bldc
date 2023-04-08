@@ -2,4 +2,4 @@
 
 (recv ((? x) (define a1 x)))
 
-(check (= a1 1))
+(= a1 1)

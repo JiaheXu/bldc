@@ -1,2 +1,2 @@
 
-(check (eq (read "\"hello world\"") "hello world"))
+(eq (read "\"hello world\"") "hello world")

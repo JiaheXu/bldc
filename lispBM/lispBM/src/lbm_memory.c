@@ -53,7 +53,6 @@ int lbm_memory_init(lbm_uint *data, lbm_uint data_size,
 
   if (!lbm_mem_mutex_initialized) {
     mutex_init(&lbm_mem_mutex);
-    lbm_mem_mutex_initialized = true;
   }
   mutex_lock(&lbm_mem_mutex);
   int res = 0;
@@ -367,9 +366,13 @@ int lbm_memory_free(lbm_uint *ptr) {
 void* lbm_malloc(size_t size) {
   lbm_uint alloc_size;
 
-  alloc_size = size / sizeof(lbm_uint);
-  if (size % sizeof(lbm_uint)) alloc_size += 1;
-
+#ifndef LBM64
+  alloc_size = size >> 2;
+  if (size & 3) alloc_size ++;
+#else
+  alloc_size = size >> 3;
+  if (size & 7) alloc_size ++;
+#endif
   if (memory_num_free - alloc_size < memory_reserve_level) {
     lbm_request_gc();
     return NULL;
@@ -379,10 +382,13 @@ void* lbm_malloc(size_t size) {
 
 void* lbm_malloc_reserve(size_t size) {
   lbm_uint alloc_size;
-
-  alloc_size = size / sizeof(lbm_uint);
-  if (size % sizeof(lbm_uint)) alloc_size += 1;
-
+#ifndef LBM64
+  alloc_size = size >> 2;
+  if (size & 3) alloc_size ++;
+#else
+  alloc_size = size >> 3;
+  if (size & 7) alloc_size ++;
+#endif
   if (memory_num_free - alloc_size < memory_reserve_level) {
     lbm_request_gc();
   }

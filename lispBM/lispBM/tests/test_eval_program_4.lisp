@@ -2,4 +2,4 @@
 (define r (+ 100 (eval-program prg)))
 
 
-(check (= (eval-program prg) 15))
+(= (eval-program prg) 15)

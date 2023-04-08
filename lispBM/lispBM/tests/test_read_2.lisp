@@ -3,4 +3,4 @@
 
 (eval-program (read-program prg))
 
-(check (= r 20))
+(= r 20)

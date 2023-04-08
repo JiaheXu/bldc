@@ -1,1 +1,1 @@
-(check (= (eval (read "(+ 1 2)")) 3))
+(= (eval (read "(+ 1 2)")) 3)

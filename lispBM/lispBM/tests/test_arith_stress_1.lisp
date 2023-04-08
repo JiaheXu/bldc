@@ -20,6 +20,6 @@
 
 ;(def n-gc2 (lbm-heap-state 'get-gc-num))
 
-(check res)
+res
 
 ;(list n-gc1 n-gc2)

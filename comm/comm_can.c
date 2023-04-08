@@ -2128,6 +2128,12 @@ static void decode_msg(uint32_t eid, uint8_t *data8, int len, bool is_replaced) 
 		d->last_update = chVTGetSystemTimeX();
 	} break;
 
+	case CAN_PACKET_SET_SERVO_POS: {
+		ind = 0;
+		servo_simple_set_output(buffer_get_float16(data8, 1000.0, &ind));
+		timeout_reset();
+	} break;
+
 	default:
 		break;
 	}

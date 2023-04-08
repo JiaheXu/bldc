@@ -14,4 +14,4 @@
 
 (gc)
 
-(check (= n (mem-num-free)))
+(= n (mem-num-free))

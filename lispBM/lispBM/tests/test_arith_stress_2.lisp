@@ -13,5 +13,4 @@
 
 (def res (test-it 10000 arith '(1 2 3 4 5 6 7 8 9 10) 362880 t))
 
-(check res)
-
+res

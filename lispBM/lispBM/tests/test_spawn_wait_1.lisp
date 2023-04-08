@@ -4,7 +4,7 @@
 
 
 
-(check (let ((id (spawn t1 0)))
-         (progn
-           (wait id)
-           'true)))
+(let ((id (spawn t1 0)))
+  (progn
+    (wait id)
+    'true))

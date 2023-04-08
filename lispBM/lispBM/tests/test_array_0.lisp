@@ -1,2 +1,2 @@
-(check (= (bufget-i8 "hello" 3u) \#l))
+(= (array-read "hello" 3u) \#l)
 

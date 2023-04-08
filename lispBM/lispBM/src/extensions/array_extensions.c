@@ -120,13 +120,16 @@ lbm_value array_extension_buffer_append_i8(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
 
   if (argn == 3) {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = lbm_dec_as_i32(args[2]);
 
@@ -155,14 +158,16 @@ lbm_value array_extension_buffer_append_i16(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = lbm_dec_as_i32(args[2]);
 
@@ -201,14 +206,16 @@ lbm_value array_extension_buffer_append_i24(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = lbm_dec_as_i32(args[2]);
 
@@ -249,14 +256,16 @@ lbm_value array_extension_buffer_append_i32(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = lbm_dec_as_i32(args[2]);
 
@@ -292,14 +301,16 @@ lbm_value array_extension_buffer_append_u8(lbm_value *args, lbm_uint argn) {
   switch(argn) {
 
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_uint value = lbm_dec_as_u32(args[2]);
 
@@ -331,14 +342,16 @@ lbm_value array_extension_buffer_append_u16(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_uint value = lbm_dec_as_u32(args[2]);
 
@@ -377,14 +390,16 @@ lbm_value array_extension_buffer_append_u24(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_uint value = lbm_dec_as_u32(args[2]);
 
@@ -425,14 +440,16 @@ lbm_value array_extension_buffer_append_u32(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_uint value = lbm_dec_as_u32(args[2]);
 
@@ -519,14 +536,16 @@ lbm_value array_extension_buffer_append_f32(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 3: {
-    if(!lbm_is_array_rw(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1]) ||
        !lbm_is_number(args[2])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
     float f_value = (float)lbm_dec_as_float(args[2]);
     lbm_value value = float_to_u(f_value);
     lbm_uint index = lbm_dec_as_u32(args[1]);
@@ -563,12 +582,15 @@ lbm_value array_extension_buffer_get_i8(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
 
   if (argn == 2) {
-    if(!lbm_is_array_r(args[0]) ||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_uint value = 0;
@@ -584,6 +606,7 @@ lbm_value array_extension_buffer_get_i8(lbm_value *args, lbm_uint argn) {
   return res;
 }
 
+
 lbm_value array_extension_buffer_get_i16(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
   bool be = true;
@@ -597,12 +620,15 @@ lbm_value array_extension_buffer_get_i16(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 2: {
-    if (!lbm_is_array_r(args[0]) ||
+    if (lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
         !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_uint value = 0;
@@ -643,12 +669,15 @@ lbm_value array_extension_buffer_get_i32(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 2: {
-    if (!lbm_is_array_r(args[0]) ||
+    if (lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
         !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     uint32_t value = 0;
@@ -685,12 +714,15 @@ lbm_value array_extension_buffer_get_u8(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
 
   if (argn == 2) {
-    if(!lbm_is_array_r(args[0])||
+    if(lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
        !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = 0;
@@ -720,12 +752,15 @@ lbm_value array_extension_buffer_get_u16(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 2: {
-    if (!lbm_is_array_r(args[0]) ||
+    if (lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
         !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = 0;
@@ -766,12 +801,15 @@ lbm_value array_extension_buffer_get_u24(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 2: {
-    if (!lbm_is_array_r(args[0]) ||
+    if (lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
         !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     lbm_int value = 0;
@@ -815,12 +853,15 @@ lbm_value array_extension_buffer_get_u32(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 2: {
-    if (!lbm_is_array_r(args[0]) ||
+    if (lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
         !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     lbm_uint index = lbm_dec_as_u32(args[1]);
     uint32_t value = 0;
@@ -865,12 +906,15 @@ lbm_value array_extension_buffer_get_f32(lbm_value *args, lbm_uint argn) {
     }
     /* fall through */
   case 2: {
-    if (!lbm_is_array_r(args[0]) ||
+    if (lbm_type_of(args[0]) != LBM_TYPE_ARRAY ||
         !lbm_is_number(args[1])) {
       return res;
     }
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
+    if (array->elt_type != LBM_TYPE_BYTE) {
+      return res;
+    }
 
     uint32_t index = (uint32_t)lbm_dec_as_u32(args[1]);
     uint32_t value = 0;
@@ -905,10 +949,22 @@ lbm_value array_extension_buffer_get_f32(lbm_value *args, lbm_uint argn) {
 lbm_value array_extension_buffer_length(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
   if (argn == 1 &&
-      lbm_is_array_r(args[0])) {
+      lbm_type_of(args[0]) == LBM_TYPE_ARRAY) {
+    printf("trying\n");
     lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
     if (array == NULL) return ENC_SYM_FATAL_ERROR;
-    res = lbm_enc_i((lbm_int)array->size);
+    switch(array->elt_type) {
+    case LBM_TYPE_CHAR: /* Same as byte */
+      res = lbm_enc_i((lbm_int)array->size);
+      break;
+    case LBM_TYPE_I: /* fall through */
+    case LBM_TYPE_U:
+    case LBM_TYPE_I32:
+    case LBM_TYPE_U32:
+    case LBM_TYPE_FLOAT:
+      res = lbm_enc_i((lbm_int)array->size * 4);
+      break;
+    }
   }
   return res;
 }
@@ -917,11 +973,14 @@ lbm_value array_extension_buffer_length(lbm_value *args, lbm_uint argn) {
 static lbm_value array_extensions_bufclear(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
 
-  if ((argn != 1 && argn != 2 && argn != 3 && argn != 4) || !lbm_is_array_rw(args[0])) {
+  if ((argn != 1 && argn != 2 && argn != 3 && argn != 4) || !lbm_is_array(args[0])) {
     return res;
   }
 
   lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
+  if (array->elt_type != LBM_TYPE_BYTE) {
+    return res;
+  }
 
   uint8_t clear_byte = 0;
   if (argn >= 2) {
@@ -964,16 +1023,22 @@ static lbm_value array_extensions_bufclear(lbm_value *args, lbm_uint argn) {
 static lbm_value array_extensions_bufcpy(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
 
-  if (argn != 5 || !lbm_is_array_rw(args[0]) || !lbm_is_number(args[1])
-      || !lbm_is_array_r(args[2]) || !lbm_is_number(args[3]) || !lbm_is_number(args[4])) {
+  if (argn != 5 || !lbm_is_array(args[0]) || !lbm_is_number(args[1])
+      || !lbm_is_array(args[2]) || !lbm_is_number(args[3]) || !lbm_is_number(args[4])) {
     return res;
   }
 
   lbm_array_header_t *array1 = (lbm_array_header_t *)lbm_car(args[0]);
+  if (array1->elt_type != LBM_TYPE_BYTE) {
+    return res;
+  }
 
   unsigned int start1 = lbm_dec_as_u32(args[1]);
 
   lbm_array_header_t *array2 = (lbm_array_header_t *)lbm_car(args[2]);
+  if (array2->elt_type != LBM_TYPE_BYTE) {
+    return res;
+  }
 
   unsigned int start2 = lbm_dec_as_u32(args[3]);
   unsigned int len = lbm_dec_as_u32(args[4]);
@@ -997,12 +1062,15 @@ static lbm_value array_extensions_bufcpy(lbm_value *args, lbm_uint argn) {
 static lbm_value array_extensions_bufset_bit(lbm_value *args, lbm_uint argn) {
   lbm_value res = ENC_SYM_EERROR;
 
-  if (argn != 3 || !lbm_is_array_rw(args[0]) ||
+  if (argn != 3 || !lbm_is_array(args[0]) ||
       !lbm_is_number(args[1]) || !lbm_is_number(args[2])) {
     return res;
   }
 
   lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(args[0]);
+  if (array->elt_type != LBM_TYPE_BYTE) {
+    return res;
+  }
 
   unsigned int pos = lbm_dec_as_u32(args[1]);
   unsigned int bit = lbm_dec_as_u32(args[2]) ? 1 : 0;

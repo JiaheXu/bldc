@@ -13,16 +13,16 @@
 
 
 
-(check (and (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            (recv ((? x) (eq x 3.14)))
-            ))
+(and (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     (recv ((? x) (eq x 3.14)))
+     )
      

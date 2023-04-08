@@ -1,1 +1,1 @@
-(check (= (eval (eval ''(+ 1 2))) 3))
+(= (eval (eval ''(+ 1 2))) 3)

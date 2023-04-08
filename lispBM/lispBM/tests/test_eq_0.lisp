@@ -1,3 +1,3 @@
-(check (eq "hello" "hello"))
+(eq "hello" "hello")
 
 

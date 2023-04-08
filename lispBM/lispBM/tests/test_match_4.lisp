@@ -4,4 +4,4 @@
                    ( (?cons c) (+ (car c) (f (cdr c))))
                    ( _ 'error-not-a-list))))
 
-(check (= (f '()) 0))
+(= (f '()) 0)

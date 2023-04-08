@@ -9,4 +9,4 @@
 
 (def d-new (matrix-to-list m))
 
-(check (eq d-new d))
+(eq d-new d)

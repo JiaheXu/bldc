@@ -1,2 +1,2 @@
 
-(check (eq (car [1 2 3]) nil))
+(eq (car [1 2 3]) nil)

@@ -113,6 +113,7 @@ typedef enum tle5012_errortypes {
 
 typedef struct {
 	volatile bool index_found;
+	volatile float last_enc_angle;
 	volatile int bad_pulses;
 } ABI_state;
 

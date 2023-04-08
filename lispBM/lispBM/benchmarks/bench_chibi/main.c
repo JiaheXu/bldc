@@ -137,7 +137,14 @@ lbm_value ext_print(lbm_value *args, lbm_uint argn) {
 
     if (lbm_is_ptr(t) && lbm_type_of(t) == LBM_TYPE_ARRAY) {
       lbm_array_header_t *array = (lbm_array_header_t *)lbm_car(t);
-      chprintf(chp,"%s", (char*)array + 8);
+      switch (array->elt_type){
+      case LBM_TYPE_CHAR:
+        chprintf(chp,"%s", (char*)array + 8);
+        break;
+      default:
+        return lbm_enc_sym(SYM_NIL);
+        break;
+      }
     } else if (lbm_type_of(t) == LBM_TYPE_CHAR) {
       if (lbm_dec_char(t) =='\n') {
         chprintf(chp, "\r\n");

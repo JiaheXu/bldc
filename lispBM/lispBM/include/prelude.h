@@ -1,3 +1,4 @@
+/** \file prelude.h */
 /*
     Copyright 2019, 2022 Joel Svensson        svenssonjoel@yahoo.se
 
@@ -14,38 +15,25 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** \file tokpar.h */
 
-#ifndef TOKPAR_H_
-#define TOKPAR_H_
+#ifndef _PRELUDE_H_
+#define _PRELUDE_H_
 
 #include "lbm_types.h"
-#include "lbm_channel.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/**to
- * State struct for the string tokenizer.
- */
-typedef struct {
-  const char *str;
-  unsigned int pos;
-  unsigned int row;
-  unsigned int column;
-} lbm_tokenizer_string_state_t;
 
-/** Get the next token from a tokenizer stream (lbm_tokenizer_char_stream_t).
+/** Creates the tokenizer state needed to load the prelude library into the heap.
  *
- * \param str Tokenizer stream to get the next token from.
- * \param peek Boolean deciding if token is cleared out of channel or left. 
- * \return an lbm_value representing the token. This token is semi-parsed
- *  at this stage and values for example are already in proper value form.
+ * \param lbm_tokenizer_string_state_t pointer
+ * \param lbm_tokenizer_char_stream_t pointer
  */
-//lbm_value lbm_get_next_token(lbm_tokenizer_char_stream_t *str);
-lbm_value lbm_get_next_token(lbm_char_channel_t *ch, bool peek);
-  
+void prelude_load(lbm_tokenizer_string_state_t *,
+		  lbm_tokenizer_char_stream_t *);
+
 #ifdef __cplusplus
 }
 #endif

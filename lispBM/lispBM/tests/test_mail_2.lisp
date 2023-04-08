@@ -18,6 +18,6 @@
 (recv ((? x) (define a2 x)))
 (recv ((? x) (define a3 x)))
 
-(check (and (= a1 4)
-            (= a2 5)
-            (= a3 6)))
+(and (= a1 4)
+     (= a2 5)
+     (= a3 6))

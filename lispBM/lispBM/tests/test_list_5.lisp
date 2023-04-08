@@ -1,1 +1,1 @@
-(check (eq (list) nil))
+(eq (list) nil)

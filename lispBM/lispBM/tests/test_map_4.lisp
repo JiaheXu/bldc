@@ -4,4 +4,4 @@
 
 (defun f (x) (+ x 1))
 
-(check (eq (map (lambda (x) (map f x)) ls) rs))
+(eq (map (lambda (x) (map f x)) ls) rs)
