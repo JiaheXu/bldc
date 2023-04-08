@@ -54,6 +54,7 @@ The following simple commands are available:
 | CAN_PACKET_SET_CURRENT_BRAKE_REL | 11 | 100000 | % / 100 |  | \-1.0 to 1.0 |
 | CAN_PACKET_SET_CURRENT_HANDBRAKE | 12 | 1000 | A |  | \-MOTOR_MAX to MOTOR_MAX |
 | CAN_PACKET_SET_CURRENT_HANDBRAKE_REL | 13 | 100000 | % / 100 |  | \-1.0 to 1.0 |
+| CAN_PACKET_SET_SERVO_POS | 63 | 1000 | % / 10 |  | 0.0 to 1.0 |
 
 #### C Code
 
