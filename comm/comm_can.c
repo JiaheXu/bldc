@@ -48,7 +48,7 @@
 
 // Settings
 #define RX_FRAMES_SIZE 50
-#define RX_BUFFER_NUM 3
+#define RX_BUFFER_NUM 4
 #define RX_BUFFER_SIZE PACKET_MAX_PL_LEN
 
 #if CAN_ENABLE
@@ -77,7 +77,7 @@ static THD_WORKING_AREA(cancom_status_internal_thread_wa, 512);
 
 static mutex_t can_mtx;
 static mutex_t can_rx_mtx;
-uint8_t rx_buffer[RX_BUFFER_NUM][RX_BUFFER_SIZE];
+uint8_t rx_buffer[RX_BUFFER_NUM][RX_BUFFER_SIZE*4];
 int rx_buffer_offset[RX_BUFFER_NUM];
 unsigned int rx_buffer_last_id;
 static rx_state m_rx_state;
@@ -2487,7 +2487,7 @@ static void decode_msg(uint32_t eid, uint8_t *data8, int len, bool is_replaced)
 		ind = 0;
 		//mc_interface_set_duty(buffer_get_float16(data8, 1e5, &ind));
 		servo_simple_set_output(buffer_get_float32(data8, 1e3, &ind));
-
+		timeout_reset();
 	}
 	break;
 
