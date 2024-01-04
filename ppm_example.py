@@ -9,13 +9,13 @@ serial_port = '/dev/ttyACM0'
 def run_motor_using_with():
     with VESC(serial_port=serial_port) as motor:
         print("Firmware: ", motor.get_firmware_version())
-        motor.set_duty_cycle(.02)
+        motor.set_duty_cycle(0.02)
 
         # run motor and print out rpm for ~2 seconds
-        for i in range(30):
-            time.sleep(0.1)
-            print(motor.get_measurements().rpm)
-        motor.set_rpm(0)
+        for i in range(300):
+            time.sleep(0.01)
+            # print(motor.get_measurements().rpm)
+            motor.set_rpm(100000)
 
 
 # a function to show how to use the class as a static object.
@@ -24,7 +24,7 @@ def run_motor_as_object():
     print("Firmware: ", motor.get_firmware_version())
 
     # sweep servo through full range
-    for i in range(1000):
+    for i in range(100000):
         time.sleep(0.05)
         mul = i // 100
         val = 0.0
@@ -51,6 +51,6 @@ def time_get_values():
 
 
 if __name__ == '__main__':
-    run_motor_using_with()
-    #run_motor_as_object()
+    # run_motor_using_with()
+    run_motor_as_object()
     time_get_values()
